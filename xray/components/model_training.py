@@ -198,12 +198,12 @@ class ModelTrainer:
             )
 
             bentoml.pytorch.save_model(
-                name=self.model_trainer_config.trained_bentoml_model_name,
-                model=model,
-                custom_objects={
-                    self.model_trainer_config.train_transforms_key: train_transforms_obj
-                },
-            )
+            name="xray_model",
+            model=model,
+            custom_objects={
+                "transform": train_transforms_obj
+            }
+        )
 
             model_trainer_artifact: ModelTrainerArtifact = ModelTrainerArtifact(
                 trained_model_path=self.model_trainer_config.trained_model_path

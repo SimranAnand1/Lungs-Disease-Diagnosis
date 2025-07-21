@@ -152,6 +152,6 @@ class Net(nn.Module):
 
         x = self.convolution_block_out(x)
 
-        x = x.view(-1, 2)
+        x = x.view(-1, 2)   # reshape to 1D tensor for classification
 
-        return F.log_softmax(x, dim=-1)
+        return F.sigmoid(x)
