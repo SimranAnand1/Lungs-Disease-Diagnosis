@@ -1,3 +1,5 @@
+# fast api application for x-ray image classification
+
 import torch
 from xray.ml.model.arch import Net  # Ensure this path is correct
 import torchvision.transforms as transforms
